@@ -1,36 +1,32 @@
-
-//! JS – Bootcamp capsules
-
-//? 1. Test the api calls with postman
-//? 2. Create an editable table with the data you are getting.
-//? 3. Create a button that can remove the row from your UI.
-//? 4. Create a button that can edit your row. Once you click
-
-const body = document.querySelector('body');
-const container = document.querySelector('.container');
-
-// const getArrOfPeople = async () => {
-  
-//     const res = fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi');
-//     console.log(res);
-// };
-
-fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi').then((res) => {
-    return res.json();
-    
-}).then((data) => {
-
-
-})
-
-
-
-
-export const createGameBoard = (row, column) => {
-  let gameTable = table(arryOfCards, row, column);
-  gameTable = gameTable + "</table>";
-  document.getElementById("flashcard").innerHTML = gameTable;
-  assignIds();
-  const gameBoard = document.querySelector(".table");
-  gameBoard.addEventListener("click", addClickEvent);
+async function getUser() {
+  const response = await fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi')
+  const data = await response.json()
+  table(data);
 }
+function table(data) {
+  
+  // the first row in the table
+  let dataTable = "<table class='table'>";
+  dataTable = dataTable + "<tr>";
+  dataTable = dataTable + `<td> id </td>`;
+  dataTable = dataTable + `<td> Name </td>`;
+  dataTable = dataTable + `<td> Last </td>`;
+  dataTable = dataTable + "</tr>";
+    
+  // insert the data from the api to the table.
+     for (let i = 0; i < data.length; i++) {
+          dataTable = dataTable + "<tr>";
+          dataTable = dataTable + `<td> ${data[i].id} </td>`;
+          dataTable = dataTable + `<td> ${data[i].firstName} </td>`;
+          dataTable = dataTable + `<td> ${data[i].lastName} </td>`;
+          // for edit and delete buttons
+          dataTable = dataTable + `<td> buttons </td>`;  
+      }
+      dataTable = dataTable + "</tr>";
+      dataTable = dataTable + "</table>";
+      document.querySelector(".table").innerHTML = dataTable;
+}
+getUser();
+
+
+
