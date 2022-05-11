@@ -1,15 +1,39 @@
-* {
+/* 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+}  */
 
 /* Resetting Window */
-
-body {
+/* 
+/* body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #688B58;
+} */ 
+
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+.table {
+position: absolute;
+left: 50%;;
+}
+.firstRow {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: aqua;
+    border-radius: 20px;
+    border-style: groove;
+    font-size: 20px;
+}
+.header {
+    position: absolute;
+    align-items: center;
+    text-align: center;
 }
 
+body {
+    background-color: azure;
+}
