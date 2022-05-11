@@ -1,6 +1,4 @@
 // Call the API
-
-function main () {
 const data = fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi').then(function (response) {
 	if (response.ok) {
 		return response.json();
@@ -82,6 +80,7 @@ function myFunction() {
 
 
   
+
 
 
 
