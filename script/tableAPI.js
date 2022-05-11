@@ -9,11 +9,13 @@ const data = fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi').then
 	return userData;
 });
 
+
 async function getUser(arr) {
     const response = await fetch(arr);
     const data = await response.json();
     return data;
-  }
+}
+
 data.then( (data) => {
     var table = document.querySelector("table");
     let arr = [];
@@ -51,6 +53,28 @@ data.then( (data) => {
            cell10.innerHTML = "<button>Delete</button>";
         });
     }
+});   
+function myFunction() {
+    var input, filter, table1, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table1 = document.querySelector("table");
+    tr = table1.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+       
+        });
+    }
  
 });  
    
@@ -60,6 +84,7 @@ data.then( (data) => {
 
 
   
+
 
 
 
@@ -144,7 +169,6 @@ data.then( (data) => {
 //           // dataTable = dataTable + `<td><button class="editBtn">Edit</button></td>`;  
 //           // dataTable = dataTable + `<td><button class="editBtn">Cancel</button></td>`;  
        
-
 //           dataTable = dataTable + `<td class="innerTable"> <h5 class="h5"> ${data[i].id} </h5></td>`;
 //           dataTable = dataTable + `<td class="innerTable"> <p class="name"> ${data[i].firstName} </p></td>`;
 //           dataTable = dataTable + `<td class="innerTable"> <p class="name"> ${data[i].lastName} </p></td>`;
@@ -154,33 +178,6 @@ data.then( (data) => {
 //       dataTable = dataTable + "</table>";
 //       document.querySelector(".table").innerHTML = dataTable;  
 //       // userInfo(data, dataTable);
-// =======
-//           dataTable = dataTable + `<td class="innerTable"> <h5 class="h5"> ${data[i].id} </h5></td>`;
-//           dataTable = dataTable + `<td class="innerTable"> <p class="name"> ${data[i].firstName} </p></td>`;
-//           dataTable = dataTable + `<td class="innerTable"> <p class="name"> ${data[i].lastName} </p></td>`;
-//           dataTable = dataTable + "</tr>";
-//       }
-      
-//       dataTable = dataTable + "</table>";
-//       document.querySelector(".table").innerHTML = dataTable;  
-//       // userInfo(data, dataTable);
-// }
-// getUser();
-
-// info for every user from the second api
-// async function userInfo(data, dataTable) {
-//   let arrayInfo = [];
-//   let url;
-//   let userId;
-//   for (let i = 1; i < data.length; i++) {
-//     userId = data[i].id;
-//     url = 'https://capsules-asb6.herokuapp.com/api/user/' + userId;
-//     const response2 = await fetch(url);
-//     const data2 = await response2.json();
-//     arrayInfo.push(data2);
-//   }
-  // insertInfo(arrayInfo, dataTable);
-
 // }
 // getUser();
 
