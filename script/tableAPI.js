@@ -6,16 +6,16 @@ async function getUser() {
 
 function table(data) {
   // the first row in the table
-  let dataTable = "<table class='table'>";
+  let dataTable = "<table>";
   dataTable = dataTable + "<tr class='firstRow'>";
-  dataTable = dataTable + `<td id="trId"> id </td>`
-  dataTable = dataTable + `<td> Name </td>`;
-  dataTable = dataTable + `<td> Last </td>`;
-  dataTable = dataTable + `<td id="1"> Capsule </td>`;
-  dataTable = dataTable + `<td id="2"> Age </td>`;
-  dataTable = dataTable + `<td id="3"> City </td>`;
-  dataTable = dataTable + `<td id="4"> Gender </td>`;
-  dataTable = dataTable + `<td id="5"> Hobby </td>`;
+  dataTable = dataTable + `<td id="trId" class="tableHead leftRadius"> ID </td>`
+  dataTable = dataTable + `<td class="tableHead"> Name </td>`;
+  dataTable = dataTable + `<td class="tableHead"> LastName </td>`;
+  dataTable = dataTable + `<td id="1" class="tableHead"> Capsule </td>`;
+  dataTable = dataTable + `<td id="2" class="tableHead"> Age </td>`;
+  dataTable = dataTable + `<td id="3" class="tableHead"> City </td>`;
+  dataTable = dataTable + `<td id="4" class="tableHead"> Gender </td>`;
+  dataTable = dataTable + `<td id="5" class="tableHead rightRadius"> Hobby </td>`;
   dataTable = dataTable + "</tr>";
   
   // insert the data from the api to the table.
@@ -35,15 +35,15 @@ function table(data) {
           // dataTable = dataTable + `<td><button class="editBtn">Edit</button></td>`;  
           // dataTable = dataTable + `<td><button class="editBtn">Cancel</button></td>`;  
        
-          dataTable = dataTable + `<td> ${data[i].id} </td>`;
-          dataTable = dataTable + `<td> ${data[i].firstName} </td>`;
-          dataTable = dataTable + `<td> ${data[i].lastName} </td>`;
+          dataTable = dataTable + `<td class="innerTable"> <h5 class="h5"> ${data[i].id} </h5></td>`;
+          dataTable = dataTable + `<td class="innerTable"> <p class="name"> ${data[i].firstName} </p></td>`;
+          dataTable = dataTable + `<td class="innerTable"> <p class="name"> ${data[i].lastName} </p></td>`;
           dataTable = dataTable + "</tr>";
       }
       
       dataTable = dataTable + "</table>";
       document.querySelector(".table").innerHTML = dataTable;  
-      userInfo(data, dataTable);
+      // userInfo(data, dataTable);
 }
 
 const searchInput = document.querySelector("#search")
