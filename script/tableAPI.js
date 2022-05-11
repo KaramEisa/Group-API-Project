@@ -4,26 +4,6 @@ async function getUser() {
   table(data);
 }
 
-
-
-// Cancel Button 
-const cancelButton = document.createElement('button');
-document.querySelector('cancelButton').classList.add('.cancelBtn');
-// Edit Button 
-const editButton = document.createElement('button');
-editButton.classList('.editBtn');
-// Apply Button 
-const applyButton = document.createElement('button');
-applyButton.classList('.applyBtn');
-
-
-function onEdit(td) {
-    document.querySelector(click(), '.editBtn') 
-        console.log('hello');
-
-}
-
-
 function table(data) {
   
   // the first row in the table
@@ -33,15 +13,23 @@ function table(data) {
   dataTable = dataTable + `<td> Name </td>`;
   dataTable = dataTable + `<td> Last </td>`;
   dataTable = dataTable + "</tr>";
-    
+  
   // insert the data from the api to the table.
-     for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
+    // to use with buttons
+    const personId = data[i].id;
+    const personFirstName = data[i].firstName;
+    const personLastName = data[i].lastName;
+
           dataTable = dataTable + "<tr>";
-          dataTable = dataTable + `<td> ${data[i].id} </td>`;
-          dataTable = dataTable + `<td> ${data[i].firstName} </td>`;
-          dataTable = dataTable + `<td> ${data[i].lastName} </td>`;
+          dataTable = dataTable + `<td> ${personId} </td>`;
+          dataTable = dataTable + `<td> ${personFirstName} </td>`;
+          dataTable = dataTable + `<td> ${personLastName} </td>`;
+          
           // for edit and delete buttons
-          dataTable = dataTable + `<td> buttons </td>`;  
+          dataTable = dataTable + `<td><button class="editBtn">Edit</button></td>`;  
+          dataTable = dataTable + `<td><button class="editBtn">Cancel</button></td>`;  
+       
       }
       dataTable = dataTable + "</tr>";
       dataTable = dataTable + "</table>";
@@ -50,4 +38,14 @@ function table(data) {
 getUser();
 
 
+setTimeout(() => {
+  
+  const editButton = document.querySelector('.editBtn');
+  editButton.addEventListener("click", editData);
+  function editData() {
+    
+    console.log("hello");
+  }
+
+}, 1500);
 
