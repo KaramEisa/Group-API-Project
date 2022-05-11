@@ -10,38 +10,61 @@
 
 /* Resetting Window */
 
- body {
+ body { 
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #2D2424;
 }
 
-
+.link {
+    text-decoration: none;
+}
 /* ************************************************* */
 
 /* header container */
 .header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 4rem;   
 }
 
+
 .title {
-    font-size: 3rem;
+    font-size: 7rem;
     font-family: 'Bangers', cursive;
     color: #C68B59;
-    font-size: 4rem;
     margin: 1rem;
 }
 
+.tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
 .searchbox {
     margin: 1rem; 
 }
 
+.search {
+    width: 20rem;
+    height: 3rem;
+    font-size: 2rem;
+}
 .selectbox {
     margin: 1rem;
+}
+select {
+    height: 3rem;
+    font-size: 1.5rem;
+}
+.resetbtn {
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.5rem;
 }
 /* ************************************************* */
 
