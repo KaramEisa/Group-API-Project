@@ -9,6 +9,7 @@
 const body = document.querySelector('body');
 const container = document.querySelector('.container');
 
+
 // const getArrOfPeople = async () => {
   
 //     const res = fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi');
@@ -34,3 +35,18 @@ export const createGameBoard = (row, column) => {
   const gameBoard = document.querySelector(".table");
   gameBoard.addEventListener("click", addClickEvent);
 }
+
+
+const searchBar = document.getElementById('searchBar');
+    searchBar.addEventListener('keyup', (e) => {
+      
+      const searchName = e.target.value.toLowerCase();
+
+      const filteredCharacters = hpCharacters.filter((character) => {
+          return (
+              character.name.toLowerCase().includes(searchName) ||
+              character.house.toLowerCase().includes(searchName)
+          );
+      });
+      displayCharacters(filteredCharacters);
+    });
