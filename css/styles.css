@@ -1,47 +1,115 @@
-/* 
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Macondo&family=Poppins:wght@400;500;600&display=swap');
+
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}  */
+    font-size: 62.5%;
+}  
 
 /* Resetting Window */
-/* 
-/* body {
+
+ body { 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #688B58;
-} */ 
+    background-color: #2D2424;
+}
 
-*{
-    font-family: 'Courier New', Courier, monospace;
+.link {
+    text-decoration: none;
 }
-.table {
-position: absolute;
-left: 50%;
-border-style: groove;
-border-width: 2px;
-background-color: rgb(238, 225, 84);
-}
-.firstRow {
-    color: red;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: aqua;
-    border-radius: 20px;
-    border-style: groove;
-    font-size: 20px;
-}
+/* ************************************************* */
+
+/* header container */
 .header {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin-top: 4rem;   
+}
+
+
+.title {
+    font-size: 7rem;
+    font-family: 'Bangers', cursive;
+    color: #C68B59;
+    margin: 1rem;
+}
+
+.tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.searchbox {
+    margin: 1rem; 
+}
+
+.search {
+    width: 20rem;
+    height: 3rem;
+    font-size: 2rem;
+}
+.selectbox {
+    margin: 1rem;
+}
+select {
+    height: 3rem;
+    font-size: 1.5rem;
+}
+.resetbtn {
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+/* ************************************************* */
+
+/* container section */
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
     text-align: center;
+    border-collapse: collapse;
+} 
+
+/* table Head */
+.tableHead {
+    font-size: 2rem;
+    font-family: 'Handlee', cursive;
+    color: #E0C097;
+    font-weight: bold;
+    background-color: #5C3D2E;
+    width: 12rem;
+    border: none;
+}
+.leftRadius {
+    border-top-left-radius: 5px;
+}
+.rightRadius {
+    border-top-right-radius: 5px;
 }
 
-body {
-    background-color: azure;
+/* Table */
+.innerTable {
+    background-color: #E0C097;
+    padding: 1rem;
 }
 
-.table td {
-    border-style: groove;
+.h5{
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
 
+.name {
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
 }
