@@ -11,8 +11,6 @@ const data = fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi').then
 	return userData;
 });
 
-
-
 async function getUser(arr) {
     const response = await fetch(arr);
     const data = await response.json();
@@ -42,6 +40,8 @@ data.then( (data) => {
            var cell6 = row.insertCell(5);
            var cell7 = row.insertCell(6);
            var cell8 = row.insertCell(7);
+           var cell9 = row.insertCell(8);
+           var cell10 = row.insertCell(9);
            cell1.innerHTML = data.id;
            cell2.innerHTML = data.firstName;  
            cell3.innerHTML = data.lastName;  
@@ -50,11 +50,44 @@ data.then( (data) => {
            cell6.innerHTML = data.city;
            cell7.innerHTML = data.gender;
            cell8.innerHTML = data.hobby;
+
+           cell9.innerHTML = "<button>Edit</button>"
+           cell10.innerHTML = "<button>Delete</button>";
         });
     }
 });   
-}
-main();
+function myFunction() {
+    var input, filter, table1, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table1 = document.querySelector("table");
+    tr = table1.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+       
+        });
+    }
+ 
+});  
+   
+
+
+
+
+
+  
+
+
 
 
 
