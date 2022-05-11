@@ -37,6 +37,8 @@ data.then( (data) => {
            var cell6 = row.insertCell(5);
            var cell7 = row.insertCell(6);
            var cell8 = row.insertCell(7);
+           var cell9 = row.insertCell(8);
+           var cell10 = row.insertCell(9);
            cell1.innerHTML = data.id;
            cell2.innerHTML = data.firstName;  
            cell3.innerHTML = data.lastName;  
@@ -45,7 +47,8 @@ data.then( (data) => {
            cell6.innerHTML = data.city;
            cell7.innerHTML = data.gender;
            cell8.innerHTML = data.hobby;
-
+           cell9.innerHTML = "<button>Edit</button>"
+           cell10.innerHTML = "<button>Delete</button>";
         });
     }
  
@@ -55,26 +58,6 @@ data.then( (data) => {
 
 
 
-
-// async function getUser() {
-//   const response = await fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi')
-//   const data = await response.json()
-//   table(data);
-// }
-
-// function table(data) {
-//   // the first row in the table
-//   let dataTable = "<table>";
-//   dataTable = dataTable + "<tr class='firstRow'>";
-//   dataTable = dataTable + `<td id="trId" class="tableHead leftRadius"> ID </td>`
-//   dataTable = dataTable + `<td class="tableHead"> Name </td>`;
-//   dataTable = dataTable + `<td class="tableHead"> LastName </td>`;
-//   dataTable = dataTable + `<td id="1" class="tableHead"> Capsule </td>`;
-//   dataTable = dataTable + `<td id="2" class="tableHead"> Age </td>`;
-//   dataTable = dataTable + `<td id="3" class="tableHead"> City </td>`;
-//   dataTable = dataTable + `<td id="4" class="tableHead"> Gender </td>`;
-//   dataTable = dataTable + `<td id="5" class="tableHead rightRadius"> Hobby </td>`;
-//   dataTable = dataTable + "</tr>";
 
   
 
