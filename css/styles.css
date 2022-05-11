@@ -53,16 +53,12 @@
     align-items: center;
     /* margin-bottom: 2rem; */
 }
-.searchbox {
-    margin: 1rem; 
-}
 
 .search {
-    width: 20rem;
-    height: 3rem;
     font-size: 2rem;
 }
 .selectbox {
+    height: 3rem;
     margin: 1rem;
 }
 select {
@@ -72,6 +68,12 @@ select {
 .resetbtn {
     width: 6rem;
     height: 3rem;
+    font-size: 1.5rem;
+}
+.searchbox {
+    width: 20rem;
+    height: 3rem;
+    margin: 1rem;
     font-size: 1.5rem;
 }
 /* ************************************************* */
