@@ -9,16 +9,18 @@
     <title>Group API Project</title>
 </head>
 <body>
-
+    
     <div class="header">
         <a href="https://fantastic-cucurucho-8a9c7c.netlify.app/" class="link">
             <h1 class="title">
             Group API Project
         </h1>
     </a>
+
+
         <div class="tools">
             <div class="searchbox">
-            <input type="text" class="search" value="Search Here">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
         </div>
         
         <div class="selectbox">
@@ -35,37 +37,32 @@
         </div>
 
             <div class="btn">
-                <button class="resetbtn">
-                    Reset
-                </button>
+               <a href="./"><button  class="resetbtn">
+                Reset
+            </button></a> 
             </div>
         </div>
     </div>
         
 
     <div class="container">
-
-        <div class="hi">
-
-            <table>
-                <tr class="th">
-                  <td><h1 class="ml">ID</h1></td>
-                  <td><H1 class="ml">Name</H1></td>
-                  <td><h1 class="ml">Last Name</h1></td>
-                  <td><h1 class="ml">Capsule</h1></td>
-                  <td><h1 class="ml">Age</h1></td>
-                  <td><h1 class="ml">City</h1></td>
-                  <td><h1 class="ml">Gender</h1></td>
-                  <td><h1>Hobby</h1></td>
-                  
-                </tr>
-    
-            </table>
-        </div>
-     
+        <table style="background-color: aquamarine;">
+            <tr>
+              <td> ID </td>
+              <td> Name </td>
+              <td> LastName </td>
+              <td> Capsule </td>
+              <td> Age </td>
+              <td> City </td>
+              <td> Gender </td>
+              <td> Hobby </td>
+            </tr>
+        </table>
         
     </div>
     
     <script src="/script/tableAPI.js"></script>
 </body>
 </html>
+
+

@@ -48,9 +48,8 @@ data.then( (data) => {
            cell6.innerHTML = data.city;
            cell7.innerHTML = data.gender;
            cell8.innerHTML = data.hobby;
-
            cell9.innerHTML = "<button>Edit</button>"
-           cell10.innerHTML = "<button>Delete</button>";
+           cell10.innerHTML = "<button id='btnDelete'>Delete</button>";
         });
     }
 });   
@@ -72,10 +71,11 @@ function myFunction() {
       }       
     }
   }
-       
 
-
-
+// const btn = document.querySelector("#btnDelete");
+// btn.addEventListener('click', () =>{
+//   document.querySelector("table").deleteRow(2);
+// });
 
 
 
