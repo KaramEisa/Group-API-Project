@@ -75,18 +75,13 @@ function myFunction() {
     }
   }
        
-        });
-    }
- 
-});  
-   
+
 
 
 
 
 
   
-
 
 
 
