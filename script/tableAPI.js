@@ -3,48 +3,83 @@ async function getUser() {
   const data = await response.json()
   table(data);
 }
+
+
 function table(data) {
   // the first row in the table
   let dataTable = "<table class='table'>";
   dataTable = dataTable + "<tr class='firstRow'>";
-  dataTable = dataTable + `<td> id </td>`;
+  dataTable = dataTable + `<td id="trId"> id </td>`
   dataTable = dataTable + `<td> Name </td>`;
   dataTable = dataTable + `<td> Last </td>`;
-  dataTable = dataTable + `<td> Capsule </td>`;
-  dataTable = dataTable + `<td> Age </td>`;
-  dataTable = dataTable + `<td> City </td>`;
-  dataTable = dataTable + `<td> Gender </td>`;
-  dataTable = dataTable + `<td> Hobby </td>`;
+  dataTable = dataTable + `<td id="1"> Capsule </td>`;
+  dataTable = dataTable + `<td id="2"> Age </td>`;
+  dataTable = dataTable + `<td id="3"> City </td>`;
+  dataTable = dataTable + `<td id="4"> Gender </td>`;
+  dataTable = dataTable + `<td id="5"> Hobby </td>`;
   dataTable = dataTable + "</tr>";
     
   // insert the data from the api to the table.
-     let info;
      for (let i = 0; i < data.length; i++) {
           dataTable = dataTable + "<tr>";
           dataTable = dataTable + `<td> ${data[i].id} </td>`;
           dataTable = dataTable + `<td> ${data[i].firstName} </td>`;
           dataTable = dataTable + `<td> ${data[i].lastName} </td>`;
-          // userInfo(data[i].id);
-          // async function userInfo(userId) {
-          //   let url = 'https://capsules-asb6.herokuapp.com/api/teacher/mordi/' + userId;
-          //   console.log(url);
-          //   const response2 = await fetch(url);
-          //   const data2 = await response2.json();
-          //   // dataTable = dataTable + `<td> ${data2.capsule} </td>`;
-          //   // dataTable = dataTable + `<td> ${data2.age} </td>`;
-          //   // dataTable = dataTable + `<td> ${data2.city} </td>`;
-          //   // dataTable = dataTable + `<td> ${data2.gender} </td>`;
-          //   // dataTable = dataTable + `<td> ${data2.hobby} </td>`;
-          // }         
-          // for edit and delete buttons
-          // dataTable = dataTable + `<td> buttons </td>`;  
-        }
-         
-      dataTable = dataTable + "</tr>";
+          dataTable = dataTable + "</tr>";
+      }
+      
       dataTable = dataTable + "</table>";
-      document.querySelector(".table").innerHTML = dataTable;
+      document.querySelector(".table").innerHTML = dataTable;  
+      userInfo(data, dataTable);
 }
 getUser();
+
+// info for every user from the second api
+// async function userInfo(data, dataTable) {
+//   let arrayInfo = [];
+//   let url;
+//   let userId;
+//   for (let i = 1; i < data.length; i++) {
+//     userId = data[i].id;
+//     url = 'https://capsules-asb6.herokuapp.com/api/user/' + userId;
+//     const response2 = await fetch(url);
+//     const data2 = await response2.json();
+//     arrayInfo.push(data2);
+//   }
+  // insertInfo(arrayInfo, dataTable);
+// }
+
+
+// function insertInfo (arrayInfo, dataTable) {
+//      console.log(arrayInfo);
+//     for (let j = 0; j < 4; j++) {
+//     const parenttbl = document.getElementsByTagName("tr");
+//     const newel = document.createElement('td');
+//     const elementid = document.getElementsByTagName("td").length
+    // newel.setAttribute('id',elementid);
+    // newel.setAttribute('id',elementid);
+    // newel.innerHTML = arrayInfo.capsule;
+    // newel.innerHTML = arrayInfo.age;
+    // newel.innerHTML = arrayInfo.city;
+    // newel.innerHTML = arrayInfo.gender;
+    // newel.innerHTML = arrayInfo.hobby;
+    // parenttbl[j].appendChild(newel);  
+
+
+
+// dataTable = dataTable + `<td id="6"> button </td>`; 
+//   dataTable = dataTable + `<td id="7"> button </td>`;
+// }
+  
+   
+             // for (let i = 0; i < data.length; i++) {
+    // dataTable = dataTable + `<td> ${data[1].capsule} </td>`;
+    // dataTable = dataTable + `<td> ${data[2].age} </td>`;
+    // dataTable = dataTable + `<td> ${data[3].city} </td>`;
+    // dataTable = dataTable + `<td> ${data[4].gender} </td>`;
+    // dataTable = dataTable + `<td> ${data[5].hobby} </td>`;
+    // dataTable = dataTable + `<td> buttons </td>`
+    // document.querySelector(".table").innerHTML = dataTable
 
 
 

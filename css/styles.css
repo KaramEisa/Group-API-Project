@@ -18,7 +18,10 @@
 }
 .table {
 position: absolute;
-left: 50%;;
+left: 50%;
+border-style: groove;
+border-width: 2px;
+background-color: rgb(238, 225, 84);
 }
 .firstRow {
     color: red;
@@ -36,4 +39,9 @@ left: 50%;;
 
 body {
     background-color: azure;
+}
+
+.table td {
+    border-style: groove;
+
 }
