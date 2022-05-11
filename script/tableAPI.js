@@ -3,6 +3,27 @@ async function getUser() {
   const data = await response.json()
   table(data);
 }
+
+
+
+// Cancel Button 
+const cancelButton = document.createElement('button');
+document.querySelector('cancelButton').classList.add('.cancelBtn');
+// Edit Button 
+const editButton = document.createElement('button');
+editButton.classList('.editBtn');
+// Apply Button 
+const applyButton = document.createElement('button');
+applyButton.classList('.applyBtn');
+
+
+function onEdit(td) {
+    document.querySelector(click(), '.editBtn') 
+        console.log('hello');
+
+}
+
+
 function table(data) {
   
   // the first row in the table
