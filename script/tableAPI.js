@@ -4,7 +4,6 @@ async function getUser() {
   table(data);
 }
 
-
 function table(data) {
   // the first row in the table
   let dataTable = "<table class='table'>";
@@ -18,10 +17,24 @@ function table(data) {
   dataTable = dataTable + `<td id="4"> Gender </td>`;
   dataTable = dataTable + `<td id="5"> Hobby </td>`;
   dataTable = dataTable + "</tr>";
-    
+  
   // insert the data from the api to the table.
-     for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
+    // to use with buttons
+    const personId = data[i].id;
+    const personFirstName = data[i].firstName;
+    const personLastName = data[i].lastName;
+
           dataTable = dataTable + "<tr>";
+
+          dataTable = dataTable + `<td> ${personId} </td>`;
+          dataTable = dataTable + `<td> ${personFirstName} </td>`;
+          dataTable = dataTable + `<td> ${personLastName} </td>`;
+          
+          // for edit and delete buttons
+          dataTable = dataTable + `<td><button class="editBtn">Edit</button></td>`;  
+          dataTable = dataTable + `<td><button class="editBtn">Cancel</button></td>`;  
+       
           dataTable = dataTable + `<td> ${data[i].id} </td>`;
           dataTable = dataTable + `<td> ${data[i].firstName} </td>`;
           dataTable = dataTable + `<td> ${data[i].lastName} </td>`;
@@ -82,4 +95,14 @@ getUser();
     // document.querySelector(".table").innerHTML = dataTable
 
 
+setTimeout(() => {
+  
+  const editButton = document.querySelector('.editBtn');
+  editButton.addEventListener("click", editData);
+  function editData() {
+    
+    console.log("hello");
+  }
+
+}, 1500);
 
