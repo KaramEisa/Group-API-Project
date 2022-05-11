@@ -9,7 +9,6 @@ const data = fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi').then
 	return userData;
 });
 
-
 async function getUser(arr) {
     const response = await fetch(arr);
     const data = await response.json();
@@ -49,6 +48,7 @@ data.then( (data) => {
            cell6.innerHTML = data.city;
            cell7.innerHTML = data.gender;
            cell8.innerHTML = data.hobby;
+
            cell9.innerHTML = "<button>Edit</button>"
            cell10.innerHTML = "<button>Delete</button>";
         });
@@ -73,18 +73,13 @@ function myFunction() {
     }
   }
        
-        });
-    }
- 
-});  
-   
+
 
 
 
 
 
   
-
 
 
 
