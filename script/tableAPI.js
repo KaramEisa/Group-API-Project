@@ -45,6 +45,29 @@ function table(data) {
       document.querySelector(".table").innerHTML = dataTable;  
       userInfo(data, dataTable);
 }
+
+const searchInput = document.querySelector("#search")
+let users = []
+
+fetch("https://capsules-asb6.herokuapp.com/api/teacher/mordi").then(res => res.json()).then(data2 => {
+    users = data2.map(user => { 
+      
+      return { name: user.id }
+    })
+  })
+  
+searchInput.addEventListener("input", e => {
+
+     console.log(users);   
+
+  //   const value = e.target.value.toLowerCase()
+    users.forEach(user => {
+      
+      const isVisible = user.name.includes(value)
+       user.element.classList.toggle("hide", !isVisible)
+  })
+})
+
 getUser();
 
 // info for every user from the second api
