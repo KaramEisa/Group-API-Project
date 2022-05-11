@@ -9,6 +9,11 @@
 const body = document.querySelector('body');
 const container = document.querySelector('.container');
 
+
+
+
+
+
 // const getArrOfPeople = async () => {
   
 //     const res = fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi');
@@ -25,12 +30,3 @@ fetch('https://capsules-asb6.herokuapp.com/api/teacher/mordi').then((res) => {
 
 
 
-
-export const createGameBoard = (row, column) => {
-  let gameTable = table(arryOfCards, row, column);
-  gameTable = gameTable + "</table>";
-  document.getElementById("flashcard").innerHTML = gameTable;
-  assignIds();
-  const gameBoard = document.querySelector(".table");
-  gameBoard.addEventListener("click", addClickEvent);
-}
